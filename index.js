@@ -4,7 +4,16 @@ const app = express();
 app.set('view engine', 'ejs')
 
 app.get("/", (req, res) => {
-    res.render('principal/perfil')
+
+    var nome = 'Rafael';
+    var lang = 'JavaScript';
+
+    res.render('index', {
+        nome,
+        lang,
+        empresa: 'rocket clouds',
+        inscritos: 300
+    })
 })
 
 app.listen(3000, () => {
